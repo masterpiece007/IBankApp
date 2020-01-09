@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dore jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="~/Content/font/iconsmind/style.css" />
+    <link rel="stylesheet" href="~/Content/font/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/bootstrap-float-label.min.css" />
+
+    @*<link rel="stylesheet" href="~/Content/css/vendor/fullcalendar.min.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/datatables.responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/select2.min.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/bootstrap-stars.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/nouislider.min.css" />
+    <link rel="stylesheet" href="~/Content/css/vendor/bootstrap-datepicker3.min.css" />*@
+</head>
+<body class="background show-spinner">
+    @RenderBody()
+    <script src="~/Content/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/dore.script.js"></script>
+    <script src="~/Content/js/scripts.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

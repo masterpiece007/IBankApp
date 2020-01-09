@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC7359E4-4168-4CDB-A61C-91147762A517}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBankingApp</RootNamespace>
+    <AssemblyName>IBankingApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\dore.dark.blue.css" />
+    <Content Include="Content\css\dore.dark.blue.min.css" />
+    <Content Include="Content\css\dore.dark.green.css" />
+    <Content Include="Content\css\dore.dark.green.min.css" />
+    <Content Include="Content\css\dore.dark.orange.css" />
+    <Content Include="Content\css\dore.dark.orange.min.css" />
+    <Content Include="Content\css\dore.dark.purple.css" />
+    <Content Include="Content\css\dore.dark.purple.min.css" />
+    <Content Include="Content\css\dore.dark.red.css" />
+    <Content Include="Content\css\dore.dark.red.min.css" />
+    <Content Include="Content\css\dore.light.blue.css" />
+    <Content Include="Content\css\dore.light.blue.min.css" />
+    <Content Include="Content\css\dore.light.green.css" />
+    <Content Include="Content\css\dore.light.green.min.css" />
+    <Content Include="Content\css\dore.light.orange.css" />
+    <Content Include="Content\css\dore.light.orange.min.css" />
+    <Content Include="Content\css\dore.light.purple.css" />
+    <Content Include="Content\css\dore.light.purple.min.css" />
+    <Content Include="Content\css\dore.light.red.css" />
+    <Content Include="Content\css\dore.light.red.min.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\vendor\bootstrap-datepicker.min.css" />
+    <Content Include="Content\css\vendor\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\css\vendor\bootstrap-float-label.min.css" />
+    <Content Include="Content\css\vendor\bootstrap-stars.css" />
+    <Content Include="Content\css\vendor\bootstrap-tagsinput.css" />
+    <Content Include="Content\css\vendor\bootstrap.min.css" />
+    <Content Include="Content\css\vendor\component-custom-switch.min.css" />
+    <Content Include="Content\css\vendor\cropper.min.css" />
+    <Content Include="Content\css\vendor\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\css\vendor\datatables.responsive.bootstrap4.min.css" />
+    <Content Include="Content\css\vendor\dropzone.min.css" />
+    <Content Include="Content\css\vendor\fullcalendar.min.css" />
+    <Content Include="Content\css\vendor\jquery.contextMenu.min.css" />
+    <Content Include="Content\css\vendor\jquery.dataTables.min.css" />
+    <Content Include="Content\css\vendor\nouislider.min.css" />
+    <Content Include="Content\css\vendor\owl.carousel.min.css" />
+    <Content Include="Content\css\vendor\perfect-scrollbar.css" />
+    <Content Include="Content\css\vendor\quill.bubble.css" />
+    <Content Include="Content\css\vendor\quill.snow.css" />
+    <Content Include="Content\css\vendor\select2-bootstrap.min.css" />
+    <Content Include="Content\css\vendor\select2.min.css" />
+    <Content Include="Content\css\vendor\slick.css" />
+    <Content Include="Content\css\vendor\video-js.css" />
+    <Content Include="Content\font\iconsmind\icomoon.svg" />
+    <Content Include="Content\font\iconsmind\style.css" />
+    <Content Include="Content\font\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Content\font\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\img\balloon.jpg" />
+    <Content Include="Content\img\balloon.png.jpg" />
+    <Content Include="Content\img\bebinca-thumb.jpg" />
+    <Content Include="Content\img\big-buck-bunny-poster.jpg" />
+    <Content Include="Content\img\card-thumb-1.jpg" />
+    <Content Include="Content\img\card-thumb-2.jpg" />
+    <Content Include="Content\img\card-thumb-3.jpg" />
+    <Content Include="Content\img\card-thumb-4.jpg" />
+    <Content Include="Content\img\carousel-1.jpg" />
+    <Content Include="Content\img\carousel-2.jpg" />
+    <Content Include="Content\img\carousel-3.jpg" />
+    <Content Include="Content\img\cheesecake-thumb.jpg" />
+    <Content Include="Content\img\chocolate-cake-thumb.jpg" />
+    <Content Include="Content\img\coconut-cake.jpg" />
+    <Content Include="Content\img\cremeschnitte-thumb.jpg" />
+    <Content Include="Content\img\detail.jpg" />
+    <Content Include="Content\img\fat-rascal-thumb.jpg" />
+    <Content Include="Content\img\financier-thumb.jpg" />
+    <Content Include="Content\img\fruitcake-thumb.jpg" />
+    <Content Include="Content\img\genoise-thumb.jpg" />
+    <Content Include="Content\img\gingerbread-thumb.jpg" />
+    <Content Include="Content\img\goose-breast-thumb.jpg" />
+    <Content Include="Content\img\landing-page\application-chat.jpg" />
+    <Content Include="Content\img\landing-page\application-library.jpg" />
+    <Content Include="Content\img\landing-page\application-survey.jpg" />
+    <Content Include="Content\img\landing-page\application-todo.jpg" />
+    <Content Include="Content\img\landing-page\blog-thumb-1.jpg" />
+    <Content Include="Content\img\landing-page\blog-thumb-2.jpg" />
+    <Content Include="Content\img\landing-page\blog-thumb-3.jpg" />
+    <Content Include="Content\img\landing-page\blog-thumb-4.jpg" />
+    <Content Include="Content\img\landing-page\blog-thumb-5.jpg" />
+    <Content Include="Content\img\landing-page\careers-1.jpg" />
+    <Content Include="Content\img\landing-page\careers-2.jpg" />
+    <Content Include="Content\img\landing-page\careers-3.jpg" />
+    <Content Include="Content\img\landing-page\careers-4.jpg" />
+    <Content Include="Content\img\landing-page\careers-5.jpg" />
+    <Content Include="Content\img\landing-page\careers-6.jpg" />
+    <Content Include="Content\img\landing-page\careers-7.jpg" />
+    <Content Include="Content\img\landing-page\client-1.png" />
+    <Content Include="Content\img\landing-page\client-2.png" />
+    <Content Include="Content\img\landing-page\client-3.png" />
+    <Content Include="Content\img\landing-page\client-4.png" />
+    <Content Include="Content\img\landing-page\client-5.png" />
+    <Content Include="Content\img\landing-page\client-6.png" />
+    <Content Include="Content\img\landing-page\dark-background-bottom.png" />
+    <Content Include="Content\img\landing-page\dark-background-top.png" />
+    <Content Include="Content\img\landing-page\feature-2.png" />
+    <Content Include="Content\img\landing-page\feature-3.png" />
+    <Content Include="Content\img\landing-page\feature.png" />
+    <Content Include="Content\img\landing-page\footer-background-blue-dark.png" />
+    <Content Include="Content\img\landing-page\footer-background-blue.png" />
+    <Content Include="Content\img\landing-page\footer-background-green-dark.png" />
+    <Content Include="Content\img\landing-page\footer-background-green.png" />
+    <Content Include="Content\img\landing-page\footer-background-orange-dark.png" />
+    <Content Include="Content\img\landing-page\footer-background-orange.png" />
+    <Content Include="Content\img\landing-page\footer-background-purple-dark.png" />
+    <Content Include="Content\img\landing-page\footer-background-purple.png" />
+    <Content Include="Content\img\landing-page\footer-background-red-dark.png" />
+    <Content Include="Content\img\landing-page\footer-background-red.png" />
+    <Content Include="Content\img\landing-page\home-background-blue-dark.png" />
+    <Content Include="Content\img\landing-page\home-background-blue.png" />
+    <Content Include="Content\img\landing-page\home-background-green-dark.png" />
+    <Content Include="Content\img\landing-page\home-background-green.png" />
+    <Content Include="Content\img\landing-page\home-background-orange-dark.png" />
+    <Content Include="Content\img\landing-page\home-background-orange.png" />
+    <Content Include="Content\img\landing-page\home-background-purple-dark.png" />
+    <Content Include="Content\img\landing-page\home-background-purple.png" />
+    <Content Include="Content\img\landing-page\home-background-red-dark.png" />
+    <Content Include="Content\img\landing-page\home-background-red.png" />
+    <Content Include="Content\img\landing-page\home-hero-mobile.png" />
+    <Content Include="Content\img\landing-page\home-hero.png" />
+    <Content Include="Content\img\landing-page\logo-footer.svg" />
+    <Content Include="Content\img\landing-page\sub-background-blue-dark.png" />
+    <Content Include="Content\img\landing-page\sub-background-blue.png" />
+    <Content Include="Content\img\landing-page\sub-background-green-dark.png" />
+    <Content Include="Content\img\landing-page\sub-background-green.png" />
+    <Content Include="Content\img\landing-page\sub-background-orange-dark.png" />
+    <Content Include="Content\img\landing-page\sub-background-orange.png" />
+    <Content Include="Content\img\landing-page\sub-background-purple-dark.png" />
+    <Content Include="Content\img\landing-page\sub-background-purple.png" />
+    <Content Include="Content\img\landing-page\sub-background-red-dark.png" />
+    <Content Include="Content\img\landing-page\sub-background-red.png" />
+    <Content Include="Content\img\landing-page\subpage-image.jpg" />
+    <Content Include="Content\img\landing-page\subpage-video-poster.jpg" />
+    <Content Include="Content\img\landing-page\team-1.jpg" />
+    <Content Include="Content\img\landing-page\team-2.jpg" />
+    <Content Include="Content\img\landing-page\team-3.jpg" />
+    <Content Include="Content\img\landing-page\team-4.jpg" />
+    <Content Include="Content\img\landing-page\team-5.jpg" />
+    <Content Include="Content\img\landing-page\values-1.jpg" />
+    <Content Include="Content\img\landing-page\values-2.jpg" />
+    <Content Include="Content\img\landing-page\values-3.jpg" />
+    <Content Include="Content\img\landing-page\values-4.jpg" />
+    <Content Include="Content\img\landing-page\values-5.jpg" />
+    <Content Include="Content\img\landing-page\values-6.jpg" />
+    <Content Include="Content\img\landing-page\values-7.jpg" />
+    <Content Include="Content\img\landing-page\values-8.jpg" />
+    <Content Include="Content\img\landing-page\white-background-bottom.png" />
+    <Content Include="Content\img\landing-page\white-background-top.png" />
+    <Content Include="Content\img\login-balloon.jpg" />
+    <Content Include="Content\img\logo-black.svg" />
+    <Content Include="Content\img\logo-mobile.svg" />
+    <Content Include="Content\img\logo-white.svg" />
+    <Content Include="Content\img\magdalena-thumb.jpg" />
+    <Content Include="Content\img\marble-cake-thumb.jpg" />
+    <Content Include="Content\img\menu-left.svg" />
+    <Content Include="Content\img\menu-right.svg" />
+    <Content Include="Content\img\menu-single.svg" />
+    <Content Include="Content\img\merveilleux-thumb.jpg" />
+    <Content Include="Content\img\napoleonshat-thumb.jpg" />
+    <Content Include="Content\img\notification-thumb-2.jpg" />
+    <Content Include="Content\img\notification-thumb-3.jpg" />
+    <Content Include="Content\img\notification-thumb.jpg" />
+    <Content Include="Content\img\pargin-thumb.jpg" />
+    <Content Include="Content\img\parkin-thumb.jpg" />
+    <Content Include="Content\img\petit-gateau-thumb.jpg" />
+    <Content Include="Content\img\plane.jpg" />
+    <Content Include="Content\img\profile-pic-l-10.jpg" />
+    <Content Include="Content\img\profile-pic-l-11.jpg" />
+    <Content Include="Content\img\profile-pic-l-2.jpg" />
+    <Content Include="Content\img\profile-pic-l-3.jpg" />
+    <Content Include="Content\img\profile-pic-l-4.jpg" />
+    <Content Include="Content\img\profile-pic-l-5.jpg" />
+    <Content Include="Content\img\profile-pic-l-6.jpg" />
+    <Content Include="Content\img\profile-pic-l-7.jpg" />
+    <Content Include="Content\img\profile-pic-l-8.jpg" />
+    <Content Include="Content\img\profile-pic-l-9.jpg" />
+    <Content Include="Content\img\profile-pic-l.jpg" />
+    <Content Include="Content\img\salzburger-nockerl-thumb.jpg" />
+    <Content Include="Content\img\souffle-thumb.jpg" />
+    <Content Include="Content\img\streuselkuchen-thumb.jpg" />
+    <Content Include="Content\img\tea-loaf-thumb.jpg" />
+    <Content Include="Content\img\thumb-1.jpg" />
+    <Content Include="Content\img\thumb-2.jpg" />
+    <Content Include="Content\img\thumb-3.jpg" />
+    <Content Include="Content\img\thumb-4.jpg" />
+    <Content Include="Content\js\dore-plugins\select.from.library.js" />
+    <Content Include="Content\js\dore.script.js" />
+    <Content Include="Content\js\dore.scripts.landingpage.js" />
+    <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\js\scripts.single.theme.js" />
+    <Content Include="Content\js\vendor\bootstrap-datepicker.js" />
+    <Content Include="Content\js\vendor\bootstrap-notify.min.js" />
+    <Content Include="Content\js\vendor\bootstrap-tagsinput.min.js" />
+    <Content Include="Content\js\vendor\bootstrap.bundle.min.js" />
+    <Content Include="Content\js\vendor\Chart.bundle.min.js" />
+    <Content Include="Content\js\vendor\chartjs-plugin-datalabels.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\ckeditor.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ar.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ast.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\bg.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ca.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\cs.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\da.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\de.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\el.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\en-au.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\eo.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\es.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\et.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\eu.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\fa.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\fi.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\fr.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\gl.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\gu.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\hr.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\hu.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\it.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ja.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\km.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\kn.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ko.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ku.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\nb.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ne.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\nl.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\no.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\oc.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\pl.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\pt-br.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\pt.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ro.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ru.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\si.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\sk.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\sq.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\sv.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\tr.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\tt.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\ug.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\uk.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\zh-cn.js" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\translations\zh.js" />
+    <Content Include="Content\js\vendor\cropper.min.js" />
+    <Content Include="Content\js\vendor\datatables.min.js" />
+    <Content Include="Content\js\vendor\dropzone.min.js" />
+    <Content Include="Content\js\vendor\fullcalendar.min.js" />
+    <Content Include="Content\js\vendor\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\vendor\jquery.barrating.min.js" />
+    <Content Include="Content\js\vendor\jquery.contextMenu.min.js" />
+    <Content Include="Content\js\vendor\landing-page\headroom.min.js" />
+    <Content Include="Content\js\vendor\landing-page\jquery.autoellipsis.js" />
+    <Content Include="Content\js\vendor\landing-page\jQuery.headroom.js" />
+    <Content Include="Content\js\vendor\landing-page\jquery.scrollTo.min.js" />
+    <Content Include="Content\js\vendor\moment.min.js" />
+    <Content Include="Content\js\vendor\mousetrap.js" />
+    <Content Include="Content\js\vendor\mousetrap.min.js" />
+    <Content Include="Content\js\vendor\nouislider.min.js" />
+    <Content Include="Content\js\vendor\owl.carousel.min.js" />
+    <Content Include="Content\js\vendor\perfect-scrollbar.min.js" />
+    <Content Include="Content\js\vendor\progressbar.min.js" />
+    <Content Include="Content\js\vendor\quill.min.js" />
+    <Content Include="Content\js\vendor\select2.full.js" />
+    <Content Include="Content\js\vendor\slick.min.js" />
+    <Content Include="Content\js\vendor\Sortable.js" />
+    <Content Include="Content\js\vendor\typeahead.bundle.js" />
+    <Content Include="Content\js\vendor\video.js" />
+    <Content Include="Content\js\vendor\videojs-youtube.min.js" />
+    <Content Include="css\dore.dark.blue.css" />
+    <Content Include="css\dore.dark.blue.min.css" />
+    <Content Include="css\dore.dark.green.css" />
+    <Content Include="css\dore.dark.green.min.css" />
+    <Content Include="css\dore.dark.orange.css" />
+    <Content Include="css\dore.dark.orange.min.css" />
+    <Content Include="css\dore.dark.purple.css" />
+    <Content Include="css\dore.dark.purple.min.css" />
+    <Content Include="css\dore.dark.red.css" />
+    <Content Include="css\dore.dark.red.min.css" />
+    <Content Include="css\dore.light.blue.css" />
+    <Content Include="css\dore.light.blue.min.css" />
+    <Content Include="css\dore.light.green.css" />
+    <Content Include="css\dore.light.green.min.css" />
+    <Content Include="css\dore.light.orange.css" />
+    <Content Include="css\dore.light.orange.min.css" />
+    <Content Include="css\dore.light.purple.css" />
+    <Content Include="css\dore.light.purple.min.css" />
+    <Content Include="css\dore.light.red.css" />
+    <Content Include="css\dore.light.red.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\vendor\bootstrap-datepicker.min.css" />
+    <Content Include="css\vendor\bootstrap-datepicker3.min.css" />
+    <Content Include="css\vendor\bootstrap-float-label.min.css" />
+    <Content Include="css\vendor\bootstrap-stars.css" />
+    <Content Include="css\vendor\bootstrap-tagsinput.css" />
+    <Content Include="css\vendor\bootstrap.min.css" />
+    <Content Include="css\vendor\component-custom-switch.min.css" />
+    <Content Include="css\vendor\cropper.min.css" />
+    <Content Include="css\vendor\dataTables.bootstrap4.min.css" />
+    <Content Include="css\vendor\datatables.responsive.bootstrap4.min.css" />
+    <Content Include="css\vendor\dropzone.min.css" />
+    <Content Include="css\vendor\fullcalendar.min.css" />
+    <Content Include="css\vendor\jquery.contextMenu.min.css" />
+    <Content Include="css\vendor\jquery.dataTables.min.css" />
+    <Content Include="css\vendor\nouislider.min.css" />
+    <Content Include="css\vendor\owl.carousel.min.css" />
+    <Content Include="css\vendor\perfect-scrollbar.css" />
+    <Content Include="css\vendor\quill.bubble.css" />
+    <Content Include="css\vendor\quill.snow.css" />
+    <Content Include="css\vendor\select2-bootstrap.min.css" />
+    <Content Include="css\vendor\select2.min.css" />
+    <Content Include="css\vendor\slick.css" />
+    <Content Include="css\vendor\video-js.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Home\css\dore.dark.blue.css" />
+    <Content Include="Home\css\dore.dark.blue.min.css" />
+    <Content Include="Home\css\dore.dark.green.css" />
+    <Content Include="Home\css\dore.dark.green.min.css" />
+    <Content Include="Home\css\dore.dark.orange.css" />
+    <Content Include="Home\css\dore.dark.orange.min.css" />
+    <Content Include="Home\css\dore.dark.purple.css" />
+    <Content Include="Home\css\dore.dark.purple.min.css" />
+    <Content Include="Home\css\dore.dark.red.css" />
+    <Content Include="Home\css\dore.dark.red.min.css" />
+    <Content Include="Home\css\dore.light.blue.css" />
+    <Content Include="Home\css\dore.light.blue.min.css" />
+    <Content Include="Home\css\dore.light.green.css" />
+    <Content Include="Home\css\dore.light.green.min.css" />
+    <Content Include="Home\css\dore.light.orange.css" />
+    <Content Include="Home\css\dore.light.orange.min.css" />
+    <Content Include="Home\css\dore.light.purple.css" />
+    <Content Include="Home\css\dore.light.purple.min.css" />
+    <Content Include="Home\css\dore.light.red.css" />
+    <Content Include="Home\css\dore.light.red.min.css" />
+    <Content Include="Home\css\main.css" />
+    <Content Include="Home\css\vendor\bootstrap-datepicker.min.css" />
+    <Content Include="Home\css\vendor\bootstrap-datepicker3.min.css" />
+    <Content Include="Home\css\vendor\bootstrap-float-label.min.css" />
+    <Content Include="Home\css\vendor\bootstrap-stars.css" />
+    <Content Include="Home\css\vendor\bootstrap-tagsinput.css" />
+    <Content Include="Home\css\vendor\bootstrap.min.css" />
+    <Content Include="Home\css\vendor\component-custom-switch.min.css" />
+    <Content Include="Home\css\vendor\cropper.min.css" />
+    <Content Include="Home\css\vendor\dataTables.bootstrap4.min.css" />
+    <Content Include="Home\css\vendor\datatables.responsive.bootstrap4.min.css" />
+    <Content Include="Home\css\vendor\dropzone.min.css" />
+    <Content Include="Home\css\vendor\fullcalendar.min.css" />
+    <Content Include="Home\css\vendor\jquery.contextMenu.min.css" />
+    <Content Include="Home\css\vendor\jquery.dataTables.min.css" />
+    <Content Include="Home\css\vendor\nouislider.min.css" />
+    <Content Include="Home\css\vendor\owl.carousel.min.css" />
+    <Content Include="Home\css\vendor\perfect-scrollbar.css" />
+    <Content Include="Home\css\vendor\quill.bubble.css" />
+    <Content Include="Home\css\vendor\quill.snow.css" />
+    <Content Include="Home\css\vendor\select2-bootstrap.min.css" />
+    <Content Include="Home\css\vendor\select2.min.css" />
+    <Content Include="Home\css\vendor\slick.css" />
+    <Content Include="Home\css\vendor\video-js.css" />
+    <Content Include="Home\img\balloon.jpg" />
+    <Content Include="Home\img\balloon.png.jpg" />
+    <Content Include="Home\img\bebinca-thumb.jpg" />
+    <Content Include="Home\img\big-buck-bunny-poster.jpg" />
+    <Content Include="Home\img\card-thumb-1.jpg" />
+    <Content Include="Home\img\card-thumb-2.jpg" />
+    <Content Include="Home\img\card-thumb-3.jpg" />
+    <Content Include="Home\img\card-thumb-4.jpg" />
+    <Content Include="Home\img\carousel-1.jpg" />
+    <Content Include="Home\img\carousel-2.jpg" />
+    <Content Include="Home\img\carousel-3.jpg" />
+    <Content Include="Home\img\cheesecake-thumb.jpg" />
+    <Content Include="Home\img\chocolate-cake-thumb.jpg" />
+    <Content Include="Home\img\coconut-cake.jpg" />
+    <Content Include="Home\img\cremeschnitte-thumb.jpg" />
+    <Content Include="Home\img\detail.jpg" />
+    <Content Include="Home\img\fat-rascal-thumb.jpg" />
+    <Content Include="Home\img\financier-thumb.jpg" />
+    <Content Include="Home\img\fruitcake-thumb.jpg" />
+    <Content Include="Home\img\genoise-thumb.jpg" />
+    <Content Include="Home\img\gingerbread-thumb.jpg" />
+    <Content Include="Home\img\goose-breast-thumb.jpg" />
+    <Content Include="Home\img\landing-page\application-chat.jpg" />
+    <Content Include="Home\img\landing-page\application-library.jpg" />
+    <Content Include="Home\img\landing-page\application-survey.jpg" />
+    <Content Include="Home\img\landing-page\application-todo.jpg" />
+    <Content Include="Home\img\landing-page\blog-thumb-1.jpg" />
+    <Content Include="Home\img\landing-page\blog-thumb-2.jpg" />
+    <Content Include="Home\img\landing-page\blog-thumb-3.jpg" />
+    <Content Include="Home\img\landing-page\blog-thumb-4.jpg" />
+    <Content Include="Home\img\landing-page\blog-thumb-5.jpg" />
+    <Content Include="Home\img\landing-page\careers-1.jpg" />
+    <Content Include="Home\img\landing-page\careers-2.jpg" />
+    <Content Include="Home\img\landing-page\careers-3.jpg" />
+    <Content Include="Home\img\landing-page\careers-4.jpg" />
+    <Content Include="Home\img\landing-page\careers-5.jpg" />
+    <Content Include="Home\img\landing-page\careers-6.jpg" />
+    <Content Include="Home\img\landing-page\careers-7.jpg" />
+    <Content Include="Home\img\landing-page\client-1.png" />
+    <Content Include="Home\img\landing-page\client-2.png" />
+    <Content Include="Home\img\landing-page\client-3.png" />
+    <Content Include="Home\img\landing-page\client-4.png" />
+    <Content Include="Home\img\landing-page\client-5.png" />
+    <Content Include="Home\img\landing-page\client-6.png" />
+    <Content Include="Home\img\landing-page\dark-background-bottom.png" />
+    <Content Include="Home\img\landing-page\dark-background-top.png" />
+    <Content Include="Home\img\landing-page\feature-2.png" />
+    <Content Include="Home\img\landing-page\feature-3.png" />
+    <Content Include="Home\img\landing-page\feature.png" />
+    <Content Include="Home\img\landing-page\footer-background-blue-dark.png" />
+    <Content Include="Home\img\landing-page\footer-background-blue.png" />
+    <Content Include="Home\img\landing-page\footer-background-green-dark.png" />
+    <Content Include="Home\img\landing-page\footer-background-green.png" />
+    <Content Include="Home\img\landing-page\footer-background-orange-dark.png" />
+    <Content Include="Home\img\landing-page\footer-background-orange.png" />
+    <Content Include="Home\img\landing-page\footer-background-purple-dark.png" />
+    <Content Include="Home\img\landing-page\footer-background-purple.png" />
+    <Content Include="Home\img\landing-page\footer-background-red-dark.png" />
+    <Content Include="Home\img\landing-page\footer-background-red.png" />
+    <Content Include="Home\img\landing-page\home-background-blue-dark.png" />
+    <Content Include="Home\img\landing-page\home-background-blue.png" />
+    <Content Include="Home\img\landing-page\home-background-green-dark.png" />
+    <Content Include="Home\img\landing-page\home-background-green.png" />
+    <Content Include="Home\img\landing-page\home-background-orange-dark.png" />
+    <Content Include="Home\img\landing-page\home-background-orange.png" />
+    <Content Include="Home\img\landing-page\home-background-purple-dark.png" />
+    <Content Include="Home\img\landing-page\home-background-purple.png" />
+    <Content Include="Home\img\landing-page\home-background-red-dark.png" />
+    <Content Include="Home\img\landing-page\home-background-red.png" />
+    <Content Include="Home\img\landing-page\home-hero-mobile.png" />
+    <Content Include="Home\img\landing-page\home-hero.png" />
+    <Content Include="Home\img\landing-page\logo-footer.svg" />
+    <Content Include="Home\img\landing-page\sub-background-blue-dark.png" />
+    <Content Include="Home\img\landing-page\sub-background-blue.png" />
+    <Content Include="Home\img\landing-page\sub-background-green-dark.png" />
+    <Content Include="Home\img\landing-page\sub-background-green.png" />
+    <Content Include="Home\img\landing-page\sub-background-orange-dark.png" />
+    <Content Include="Home\img\landing-page\sub-background-orange.png" />
+    <Content Include="Home\img\landing-page\sub-background-purple-dark.png" />
+    <Content Include="Home\img\landing-page\sub-background-purple.png" />
+    <Content Include="Home\img\landing-page\sub-background-red-dark.png" />
+    <Content Include="Home\img\landing-page\sub-background-red.png" />
+    <Content Include="Home\img\landing-page\subpage-image.jpg" />
+    <Content Include="Home\img\landing-page\subpage-video-poster.jpg" />
+    <Content Include="Home\img\landing-page\team-1.jpg" />
+    <Content Include="Home\img\landing-page\team-2.jpg" />
+    <Content Include="Home\img\landing-page\team-3.jpg" />
+    <Content Include="Home\img\landing-page\team-4.jpg" />
+    <Content Include="Home\img\landing-page\team-5.jpg" />
+    <Content Include="Home\img\landing-page\values-1.jpg" />
+    <Content Include="Home\img\landing-page\values-2.jpg" />
+    <Content Include="Home\img\landing-page\values-3.jpg" />
+    <Content Include="Home\img\landing-page\values-4.jpg" />
+    <Content Include="Home\img\landing-page\values-5.jpg" />
+    <Content Include="Home\img\landing-page\values-6.jpg" />
+    <Content Include="Home\img\landing-page\values-7.jpg" />
+    <Content Include="Home\img\landing-page\values-8.jpg" />
+    <Content Include="Home\img\landing-page\white-background-bottom.png" />
+    <Content Include="Home\img\landing-page\white-background-top.png" />
+    <Content Include="Home\img\login-balloon.jpg" />
+    <Content Include="Home\img\logo-black.svg" />
+    <Content Include="Home\img\logo-mobile.svg" />
+    <Content Include="Home\img\logo-white.svg" />
+    <Content Include="Home\img\magdalena-thumb.jpg" />
+    <Content Include="Home\img\marble-cake-thumb.jpg" />
+    <Content Include="Home\img\menu-left.svg" />
+    <Content Include="Home\img\menu-right.svg" />
+    <Content Include="Home\img\menu-single.svg" />
+    <Content Include="Home\img\merveilleux-thumb.jpg" />
+    <Content Include="Home\img\napoleonshat-thumb.jpg" />
+    <Content Include="Home\img\notification-thumb-2.jpg" />
+    <Content Include="Home\img\notification-thumb-3.jpg" />
+    <Content Include="Home\img\notification-thumb.jpg" />
+    <Content Include="Home\img\pargin-thumb.jpg" />
+    <Content Include="Home\img\parkin-thumb.jpg" />
+    <Content Include="Home\img\petit-gateau-thumb.jpg" />
+    <Content Include="Home\img\plane.jpg" />
+    <Content Include="Home\img\profile-pic-l-10.jpg" />
+    <Content Include="Home\img\profile-pic-l-11.jpg" />
+    <Content Include="Home\img\profile-pic-l-2.jpg" />
+    <Content Include="Home\img\profile-pic-l-3.jpg" />
+    <Content Include="Home\img\profile-pic-l-4.jpg" />
+    <Content Include="Home\img\profile-pic-l-5.jpg" />
+    <Content Include="Home\img\profile-pic-l-6.jpg" />
+    <Content Include="Home\img\profile-pic-l-7.jpg" />
+    <Content Include="Home\img\profile-pic-l-8.jpg" />
+    <Content Include="Home\img\profile-pic-l-9.jpg" />
+    <Content Include="Home\img\profile-pic-l.jpg" />
+    <Content Include="Home\img\salzburger-nockerl-thumb.jpg" />
+    <Content Include="Home\img\souffle-thumb.jpg" />
+    <Content Include="Home\img\streuselkuchen-thumb.jpg" />
+    <Content Include="Home\img\tea-loaf-thumb.jpg" />
+    <Content Include="Home\img\thumb-1.jpg" />
+    <Content Include="Home\img\thumb-2.jpg" />
+    <Content Include="Home\img\thumb-3.jpg" />
+    <Content Include="Home\img\thumb-4.jpg" />
+    <Content Include="img\balloon.jpg" />
+    <Content Include="img\balloon.png.jpg" />
+    <Content Include="img\bebinca-thumb.jpg" />
+    <Content Include="img\big-buck-bunny-poster.jpg" />
+    <Content Include="img\card-thumb-1.jpg" />
+    <Content Include="img\card-thumb-2.jpg" />
+    <Content Include="img\card-thumb-3.jpg" />
+    <Content Include="img\card-thumb-4.jpg" />
+    <Content Include="img\carousel-1.jpg" />
+    <Content Include="img\carousel-2.jpg" />
+    <Content Include="img\carousel-3.jpg" />
+    <Content Include="img\cheesecake-thumb.jpg" />
+    <Content Include="img\chocolate-cake-thumb.jpg" />
+    <Content Include="img\coconut-cake.jpg" />
+    <Content Include="img\cremeschnitte-thumb.jpg" />
+    <Content Include="img\detail.jpg" />
+    <Content Include="img\fat-rascal-thumb.jpg" />
+    <Content Include="img\financier-thumb.jpg" />
+    <Content Include="img\fruitcake-thumb.jpg" />
+    <Content Include="img\genoise-thumb.jpg" />
+    <Content Include="img\gingerbread-thumb.jpg" />
+    <Content Include="img\goose-breast-thumb.jpg" />
+    <Content Include="img\landing-page\application-chat.jpg" />
+    <Content Include="img\landing-page\application-library.jpg" />
+    <Content Include="img\landing-page\application-survey.jpg" />
+    <Content Include="img\landing-page\application-todo.jpg" />
+    <Content Include="img\landing-page\blog-thumb-1.jpg" />
+    <Content Include="img\landing-page\blog-thumb-2.jpg" />
+    <Content Include="img\landing-page\blog-thumb-3.jpg" />
+    <Content Include="img\landing-page\blog-thumb-4.jpg" />
+    <Content Include="img\landing-page\blog-thumb-5.jpg" />
+    <Content Include="img\landing-page\careers-1.jpg" />
+    <Content Include="img\landing-page\careers-2.jpg" />
+    <Content Include="img\landing-page\careers-3.jpg" />
+    <Content Include="img\landing-page\careers-4.jpg" />
+    <Content Include="img\landing-page\careers-5.jpg" />
+    <Content Include="img\landing-page\careers-6.jpg" />
+    <Content Include="img\landing-page\careers-7.jpg" />
+    <Content Include="img\landing-page\client-1.png" />
+    <Content Include="img\landing-page\client-2.png" />
+    <Content Include="img\landing-page\client-3.png" />
+    <Content Include="img\landing-page\client-4.png" />
+    <Content Include="img\landing-page\client-5.png" />
+    <Content Include="img\landing-page\client-6.png" />
+    <Content Include="img\landing-page\dark-background-bottom.png" />
+    <Content Include="img\landing-page\dark-background-top.png" />
+    <Content Include="img\landing-page\feature-2.png" />
+    <Content Include="img\landing-page\feature-3.png" />
+    <Content Include="img\landing-page\feature.png" />
+    <Content Include="img\landing-page\footer-background-blue-dark.png" />
+    <Content Include="img\landing-page\footer-background-blue.png" />
+    <Content Include="img\landing-page\footer-background-green-dark.png" />
+    <Content Include="img\landing-page\footer-background-green.png" />
+    <Content Include="img\landing-page\footer-background-orange-dark.png" />
+    <Content Include="img\landing-page\footer-background-orange.png" />
+    <Content Include="img\landing-page\footer-background-purple-dark.png" />
+    <Content Include="img\landing-page\footer-background-purple.png" />
+    <Content Include="img\landing-page\footer-background-red-dark.png" />
+    <Content Include="img\landing-page\footer-background-red.png" />
+    <Content Include="img\landing-page\home-background-blue-dark.png" />
+    <Content Include="img\landing-page\home-background-blue.png" />
+    <Content Include="img\landing-page\home-background-green-dark.png" />
+    <Content Include="img\landing-page\home-background-green.png" />
+    <Content Include="img\landing-page\home-background-orange-dark.png" />
+    <Content Include="img\landing-page\home-background-orange.png" />
+    <Content Include="img\landing-page\home-background-purple-dark.png" />
+    <Content Include="img\landing-page\home-background-purple.png" />
+    <Content Include="img\landing-page\home-background-red-dark.png" />
+    <Content Include="img\landing-page\home-background-red.png" />
+    <Content Include="img\landing-page\home-hero-mobile.png" />
+    <Content Include="img\landing-page\home-hero.png" />
+    <Content Include="img\landing-page\logo-footer.svg" />
+    <Content Include="img\landing-page\sub-background-blue-dark.png" />
+    <Content Include="img\landing-page\sub-background-blue.png" />
+    <Content Include="img\landing-page\sub-background-green-dark.png" />
+    <Content Include="img\landing-page\sub-background-green.png" />
+    <Content Include="img\landing-page\sub-background-orange-dark.png" />
+    <Content Include="img\landing-page\sub-background-orange.png" />
+    <Content Include="img\landing-page\sub-background-purple-dark.png" />
+    <Content Include="img\landing-page\sub-background-purple.png" />
+    <Content Include="img\landing-page\sub-background-red-dark.png" />
+    <Content Include="img\landing-page\sub-background-red.png" />
+    <Content Include="img\landing-page\subpage-image.jpg" />
+    <Content Include="img\landing-page\subpage-video-poster.jpg" />
+    <Content Include="img\landing-page\team-1.jpg" />
+    <Content Include="img\landing-page\team-2.jpg" />
+    <Content Include="img\landing-page\team-3.jpg" />
+    <Content Include="img\landing-page\team-4.jpg" />
+    <Content Include="img\landing-page\team-5.jpg" />
+    <Content Include="img\landing-page\values-1.jpg" />
+    <Content Include="img\landing-page\values-2.jpg" />
+    <Content Include="img\landing-page\values-3.jpg" />
+    <Content Include="img\landing-page\values-4.jpg" />
+    <Content Include="img\landing-page\values-5.jpg" />
+    <Content Include="img\landing-page\values-6.jpg" />
+    <Content Include="img\landing-page\values-7.jpg" />
+    <Content Include="img\landing-page\values-8.jpg" />
+    <Content Include="img\landing-page\white-background-bottom.png" />
+    <Content Include="img\landing-page\white-background-top.png" />
+    <Content Include="img\login-balloon.jpg" />
+    <Content Include="img\logo-black.svg" />
+    <Content Include="img\logo-mobile.svg" />
+    <Content Include="img\logo-white.svg" />
+    <Content Include="img\magdalena-thumb.jpg" />
+    <Content Include="img\marble-cake-thumb.jpg" />
+    <Content Include="img\menu-left.svg" />
+    <Content Include="img\menu-right.svg" />
+    <Content Include="img\menu-single.svg" />
+    <Content Include="img\merveilleux-thumb.jpg" />
+    <Content Include="img\napoleonshat-thumb.jpg" />
+    <Content Include="img\notification-thumb-2.jpg" />
+    <Content Include="img\notification-thumb-3.jpg" />
+    <Content Include="img\notification-thumb.jpg" />
+    <Content Include="img\pargin-thumb.jpg" />
+    <Content Include="img\parkin-thumb.jpg" />
+    <Content Include="img\petit-gateau-thumb.jpg" />
+    <Content Include="img\plane.jpg" />
+    <Content Include="img\profile-pic-l-10.jpg" />
+    <Content Include="img\profile-pic-l-11.jpg" />
+    <Content Include="img\profile-pic-l-2.jpg" />
+    <Content Include="img\profile-pic-l-3.jpg" />
+    <Content Include="img\profile-pic-l-4.jpg" />
+    <Content Include="img\profile-pic-l-5.jpg" />
+    <Content Include="img\profile-pic-l-6.jpg" />
+    <Content Include="img\profile-pic-l-7.jpg" />
+    <Content Include="img\profile-pic-l-8.jpg" />
+    <Content Include="img\profile-pic-l-9.jpg" />
+    <Content Include="img\profile-pic-l.jpg" />
+    <Content Include="img\salzburger-nockerl-thumb.jpg" />
+    <Content Include="img\souffle-thumb.jpg" />
+    <Content Include="img\streuselkuchen-thumb.jpg" />
+    <Content Include="img\tea-loaf-thumb.jpg" />
+    <Content Include="img\thumb-1.jpg" />
+    <Content Include="img\thumb-2.jpg" />
+    <Content Include="img\thumb-3.jpg" />
+    <Content Include="img\thumb-4.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\css\sass\themes\dore.dark.blue.scss" />
+    <Content Include="Content\css\sass\themes\dore.dark.green.scss" />
+    <Content Include="Content\css\sass\themes\dore.dark.orange.scss" />
+    <Content Include="Content\css\sass\themes\dore.dark.purple.scss" />
+    <Content Include="Content\css\sass\themes\dore.dark.red.scss" />
+    <Content Include="Content\css\sass\themes\dore.light.blue.scss" />
+    <Content Include="Content\css\sass\themes\dore.light.green.scss" />
+    <Content Include="Content\css\sass\themes\dore.light.orange.scss" />
+    <Content Include="Content\css\sass\themes\dore.light.purple.scss" />
+    <Content Include="Content\css\sass\themes\dore.light.red.scss" />
+    <Content Include="Content\css\sass\_dore.style.scss" />
+    <Content Include="Content\css\sass\_mixins.scss" />
+    <Content Include="Content\font\iconsmind\icomoon.eot" />
+    <Content Include="Content\font\iconsmind\icomoon.ttf" />
+    <Content Include="Content\font\iconsmind\icomoon.woff" />
+    <Content Include="Content\font\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Content\font\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\font\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\font\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Content\font\simple-line-icons\LICENSE.md" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\ckeditor.js.map" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\LICENSE.md" />
+    <Content Include="Content\js\vendor\ckeditor5-build-classic\README.md" />
+    <Content Include="css\sass\_dore.style.scss" />
+    <Content Include="css\sass\_mixins.scss" />
+    <Content Include="css\sass\themes\dore.dark.blue.scss" />
+    <Content Include="css\sass\themes\dore.dark.green.scss" />
+    <Content Include="css\sass\themes\dore.dark.orange.scss" />
+    <Content Include="css\sass\themes\dore.dark.purple.scss" />
+    <Content Include="css\sass\themes\dore.dark.red.scss" />
+    <Content Include="css\sass\themes\dore.light.blue.scss" />
+    <Content Include="css\sass\themes\dore.light.green.scss" />
+    <Content Include="css\sass\themes\dore.light.orange.scss" />
+    <Content Include="css\sass\themes\dore.light.purple.scss" />
+    <Content Include="css\sass\themes\dore.light.red.scss" />
+    <Content Include="Home\css\sass\_dore.style.scss" />
+    <Content Include="Home\css\sass\_mixins.scss" />
+    <Content Include="Home\css\sass\themes\dore.dark.blue.scss" />
+    <Content Include="Home\css\sass\themes\dore.dark.green.scss" />
+    <Content Include="Home\css\sass\themes\dore.dark.orange.scss" />
+    <Content Include="Home\css\sass\themes\dore.dark.purple.scss" />
+    <Content Include="Home\css\sass\themes\dore.dark.red.scss" />
+    <Content Include="Home\css\sass\themes\dore.light.blue.scss" />
+    <Content Include="Home\css\sass\themes\dore.light.green.scss" />
+    <Content Include="Home\css\sass\themes\dore.light.orange.scss" />
+    <Content Include="Home\css\sass\themes\dore.light.purple.scss" />
+    <Content Include="Home\css\sass\themes\dore.light.red.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.fundtransfer.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.auth.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Auth\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_LayoutDashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56144</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56144/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
