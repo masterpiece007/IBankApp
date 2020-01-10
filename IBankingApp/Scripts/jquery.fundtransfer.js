@@ -3,7 +3,6 @@
     //$("#RegistrationDiv").hide();
     GetData();
     $('#fundForm').submit(function () {
-        alert("fund");
         var username = $("#username_").val();
 
         $("#btnSendMoney").attr("disabled", true);
@@ -15,7 +14,6 @@
             TransactionDate: strDate,
             Sender: username
         }
-        alert("fund22");
 
         $.ajax({
             type: "POST",
@@ -34,23 +32,7 @@
             }
         });
         return false;
-        //$.ajax({
-        //    type: "POST",
-        //    url: 'http://localhost:54234/api/account/register',
-        //    dataType: "text",
-        //    data: regData,
-        //    success: function (result) {
-
-        //        var response = eval(result);
-        //        alert("reg successful");
-        //        console.log(result)
-        //        $("#btnReg").attr("disabled", false);
-        //        ShowLogin();
-        //    },
-        //    error: function (request, status, error) {
-        //        //Do Something on Failure
-        //    }
-        //});
+      
     });
     $("#fundLink").click(function () {
         $("#fundSection").show();
@@ -58,9 +40,15 @@
         $("#section2").hide();
 
     });
+
+    $("#logoutLink").click(function () {
+        
+          window.location.replace("/");
+
+    });
     function GetData() {
         var username = $("#username_").val();
-        alert(username);
+       
         $.ajax({
             type: "GET",
             url: 'http://localhost:53808/api/transaction/GetData',
@@ -69,10 +57,14 @@
             success: function (result) {
 
                 console.log(typeof(result));
-                console.log(result);
                 $("#acountBalance").text("N"+result.account.AccountBalance)
                 $("#fullnameSpan").text(result.account.AppUser.Firstname + " " + result.account.AppUser.LastName);
-                $("#transactionCount").text(result.txns.length + "Transactions")
+                if (result.txns.length <= 0 || result.txns.length == null) {
+                    $("#transactionCount").text(0 + " Transaction(s)")
+
+                } else {
+                    $("#transactionCount").text(result.txns.length + " Transaction(s)")
+                }
                 console.log("data fetch successfully", result);
                 $("#btnSendMoney").attr("disabled", false);
 
@@ -93,8 +85,6 @@
     function loopTxns(item, index) {
         var markup = " <tr><td><p class='list-item-heading'>" + item.Recipient + "</p></td ><td><p class='text-muted'>" + item.Amount + "</p></td></tr > "
         $("#txnHistoryBody").append(markup);
-        console.log(item.Recipient);
-        console.log(markup);
        // document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
     }
 

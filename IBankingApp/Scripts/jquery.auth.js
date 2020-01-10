@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    console.log("doc ready")
+    console.log("document ready")
     $("#RegistrationDiv").hide();
 
    
@@ -7,8 +7,6 @@
    
     $('#LoginForm').submit(function () {
         $("#btnLogin").attr("disabled", true);
-        alert("dew")
-        //var createdBy = $('#createdBy').val();
         loginData = {
             grant_type:"password",
             username: $("#loginEmail").val(),
@@ -22,7 +20,6 @@
             data: loginData,
             success: function (result) {
                 alert("login successful");
-                console.log("login ", result);
                 console.log("login successful")
                 $("#btnLogin").attr("disabled", false);
                 //ShowReg();
@@ -31,6 +28,7 @@
             },
             error: function (request, status, error) {
                 $("#btnLogin").attr("disabled", false);
+                $("#errorLogin").removeAttr("hidden");
 
                 //Do Something on Failure
             }
@@ -41,8 +39,6 @@
     });
     $('#RegForm').submit(function () {
         $("#btnReg").attr("disabled", true);
-        //alert("here")
-        //var createdBy = $('#createdBy').val();
         regData = {
             email: $("#email").val(),
             password: $("#password").val(),
@@ -59,8 +55,7 @@
             success: function (result) {
 
                 var response = eval(result);
-                alert("reg successful");
-                console.log(result)
+                alert("registration successful");
                 $("#btnReg").attr("disabled", false);
                 ShowLogin();
             },

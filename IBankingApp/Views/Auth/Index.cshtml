@@ -21,19 +21,22 @@
                         <h6 class="mb-4">Login</h6>
                         <form id="LoginForm">
                             <label class="form-group has-float-label mb-4">
-                                <input id="loginEmail" class="form-control" required/>
+                                <input id="loginEmail" class="form-control" required />
                                 <span>E-mail</span>
                             </label>
 
                             <label class="form-group has-float-label mb-4">
-                                <input id="loginPword" class="form-control" type="password" placeholder="" required/>
+                                <input id="loginPword" class="form-control" type="password" placeholder="" required />
                                 <span>Password</span>
                             </label>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a id="regLink" href="#">New User? Register</a>
-                                <button id="btnLogin" class="btn btn-primary btn-lg btn-shadow" type="submit">LOGIN</button>
+                                <button id="btnLogin" class="btn btn-primary btn-lg btn-shadow" type="submit">LOGIN</button><br />
                             </div>
+
                         </form>
+                        <span id="errorLogin" hidden style="color:orangered">invalid username or password</span>
+
                     </div>
                     <div id="RegistrationDiv" class="form-side">
                         <a href="Dashboard.Default.html">
@@ -43,27 +46,27 @@
 
                         <form id="RegForm">
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" id="firstName" />
+                                <input class="form-control" id="firstName" required/>
                                 <span>FirstName</span>
                             </label> 
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" id="lastName"/>
+                                <input class="form-control" id="lastName" required/>
                                 <span>LastName</span>
                             </label>
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" id="email"/>
+                                <input class="form-control" id="email" required/>
                                 <span>E-mail</span>
                             </label> 
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" id="accountNumber"/>
+                                <input class="form-control" id="accountNumber" required/>
                                 <span>Account No</span>
                             </label>
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" type="password" placeholder="" id="password"/>
+                                <input class="form-control" type="password" placeholder="" id="password" required/>
                                 <span>Password</span>
                             </label> 
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" type="password" placeholder="" id="confirmPassword" />
+                                <input class="form-control" type="password" placeholder="" id="confirmPassword" required/>
                                 <span>Confirm Password</span>
                             </label>
                             <div class="d-flex justify-content-between align-items-center">
